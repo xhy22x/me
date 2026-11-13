@@ -1,3 +1,43 @@
 export default {
-  'hello': 'Hello',
-} as const
+  navbar: {
+    about: '/about',
+    projects: '/projects',
+    contact: '/contact',
+  },
+  about: {
+    title: 'about me',
+    'building-skills': 'building my skills',
+    'building-skills-description': 'Focused on learning through hands-on practice.',
+    'education-details': [
+      'Cybersecurity — Bachelor 3 + Master\'s Cycle',
+      'Oteria Cyber School · 2026–2029',
+      'Computer Science Studies',
+      'IUT Paris Rives de Seine · 2024–2026',
+    ],
+    interests: [
+      'Offensive Security',
+      'Pentesting',
+      'Programming',
+      'Linux',
+      'Networking',
+      'Cryptography',
+      'Mathematics',
+    ],
+  },
+  projects: {
+    title: 'projects',
+    'repo-info': 'repository info',
+    description: 'description',
+    lang: 'languages',
+    'view-repo': 'view repository',
+    'not-specified': 'Not specified',
+    'no-description': 'No description provided',
+  },
+  contact: {
+    description: "I'm open to new opportunities and collaborations. Feel free to get in touch!",
+    'cv-link': 'view my cv',
+  },
+  footer: {
+    copyright: '© 2026 xhy22x · All rights reserved.',
+  },
+} as const;

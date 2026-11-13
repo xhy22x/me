@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Loading from "./components/loading"
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import { Suspense } from "react";
 import { Providers } from "./providers";
 import { getStaticParams } from "@/locales/server";
 
@@ -21,10 +25,16 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   return (
-    <html lang={locale} className="h-full antialiased">
+    <html lang={locale} className="h-full antialiased snap-y snap-proximity scroll-smooth">
       <body className="min-h-full flex flex-col">
-        {children}
-        </body>
+        <Providers locale={locale}>
+            <Suspense fallback={<Loading />}>
+              <Navbar locale={locale} />
+              {children}
+              <Footer />
+            </Suspense>
+        </Providers>
+      </body>
     </html>
   );
 }

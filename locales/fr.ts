@@ -1,3 +1,43 @@
 export default {
-  'hello': 'Salut',
-} as const
+  navbar: {
+    about: '/a-propos',
+    projects: '/projets',
+    contact: '/contact',
+  },
+  about: {
+    title: 'profil',
+    'building-skills': 'Développement de mes compétences',
+    'building-skills-description': 'Je développe mes compétences grâce à la pratique.',
+    'education-details': [
+      'Bachelor 3 Cybersécurité (B3) → cycle Master',
+      'Oteria Cyber School · 2026–2029',
+      'BUT Informatique',
+      'IUT Paris Rives de Seine · 2024–2026',
+    ],
+    interests: [
+      'Sécurité offensive',
+      'Tests d’intrusion',
+      'Programmation',
+      'Linux',
+      'Réseaux',
+      'Cryptographie',
+      'Mathématiques',
+    ],
+  },
+  projects: {
+    title: 'Projets',
+    'repo-info': 'informations du dépôt',
+    description: 'description',
+    lang: 'langages',
+    'view-repo': 'voir le dépôt',
+    'not-specified': 'Non renseigné',
+    'no-description': 'Aucune description fournie',
+  },
+  contact: {
+    description: "Je suis ouverte à de nouvelles opportunités et collaborations. N'hésitez pas à me contacter !",
+    'cv-link': 'voir mon cv',
+  },
+  footer: {
+    copyright: '© 2026 xhy22x · Tous droits réservés.',
+  },
+} as const;

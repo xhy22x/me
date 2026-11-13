@@ -4,6 +4,7 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  interpolate-size: allow-keywords;
 }
 
 @theme inline {
@@ -17,4 +18,64 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-mono);
+}
+
+h2 {
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+section > h2{
+  filter: drop-shadow(0 0 0.1px white);
+  font-size: 1.25rem;
+  padding-top: 2.25rem;
+  padding-bottom: 2rem;
+}
+section > h2::before{
+  content: "> ";
+  font-size: 1.25rem;
+}
+
+/* components */
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #ffffff;
+  vertical-align: middle;
+  animation: blink 0.9s steps(2) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.smooth-details {
+  interpolate-size: allow-keywords;
+}
+.smooth-details::details-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms ease, content-visibility 300ms allow-discrete;
+}
+.smooth-details[open]::details-content {
+  height: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .smooth-details::details-content {
+    transition: none;
+  }
+}
+
+/* loading */
+@keyframes loading {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+.animate-loading {
+  animation: loading 1.5s linear infinite;
 }
